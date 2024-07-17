@@ -1,0 +1,23 @@
+name: Fetch CRDs
+on:
+  workflow_call:
+  push:
+    branches: [ main ]
+jobs:
+  fetch:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - run: |
+          pip install -r src/requirements.txt
+          python src -s sources.yaml -o out
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out/

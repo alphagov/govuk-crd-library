@@ -1,0 +1,20 @@
+# Helm
+- kind: helm
+  # Helm repository URL
+  repository: https://example.com
+  # Helm chart name
+  chart: example-chart
+  # Version of the chart to render (optional, defaults to latest)
+  version: "1.2.3"
+  # Values to pass in to `helm template`.
+  #  Sometimes required to make the chart render CRDs
+  values: |
+    crds:
+      install: true
+# Git
+- kind: git
+  repository: https://githost.example.com/repo.git
+  # Path to CRDs. If none is provided, entire repo will be searched
+  path: path/to/crds
+  # Git revision. Can be branch or tag, defaults to `main`
+  revision: "1.2.3"
