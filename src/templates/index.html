@@ -21,7 +21,9 @@
     <h2>{{ group }}</h2>
     <ul>
       {% for crd in crds|sort(attribute="kind") %}
-      <li>{{ crd['kind'] }}</li>
+        {% for version in crd['versions'] %}
+        <li>{{ crd['kind'] }}_{{ version['name'] }}</li>
+        {% endfor %}
       {% endfor %}
     </ul>
     {% endfor %}
