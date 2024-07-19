@@ -21,6 +21,10 @@
   repository: https://github.com/aws/eks-charts.git
   path: stable/aws-load-balancer-controller/crds
   revision: master
+- kind: git
+  repository: https://github.com/aws/eks-charts.git
+  path: stable/aws-vpc-cni/crds
+  revision: master
 - kind: helm
   repository: https://charts.external-secrets.io
   chart: external-secrets
