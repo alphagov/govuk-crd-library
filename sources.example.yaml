@@ -1,4 +1,4 @@
-# Helm
+# Find resources from a Helm chart
 - kind: helm
   # Helm repository URL
   repository: https://example.com
@@ -11,8 +11,9 @@
   values: |
     crds:
       install: true
-# Git
+# Find resources in a Git repository
 - kind: git
+  # Repo URL. Auth is not supported, so the repo must be public
   repository: https://githost.example.com/repo.git
   # Path to CRDs. If none is provided, entire repo will be searched
   path: path/to/crds
