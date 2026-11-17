@@ -9,6 +9,10 @@
   path: manifests/base/crds/full
   revision: main
 - kind: git
+  repository: https://github.com/cilium/cilium.git
+  path: pkg/k8s/apis/cilium.io/client/crds
+  revision: main
+- kind: git
   repository: https://github.com/dexidp/dex.git
   path: scripts/manifests/crds
   revision: master
