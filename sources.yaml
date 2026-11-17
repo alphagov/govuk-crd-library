@@ -4,15 +4,10 @@
   values: |
     crds:
       install: true
-- kind: helm
-  repository: https://argoproj.github.io/argo-helm
-  chart: argo-workflows
-  values: |
-    crds:
-      install: true
-    server:
-      clusterWorkflowTemplates:
-        enabled: true
+- kind: git
+  repository: https://github.com/argoproj/argo-workflows.git
+  path: manifests/base/crds/full
+  revision: main
 - kind: git
   repository: https://github.com/dexidp/dex.git
   path: scripts/manifests/crds
